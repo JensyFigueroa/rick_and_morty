@@ -1,0 +1,22 @@
+.navBar{
+    display: flex;
+    justify-content:space-between ; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%; 
+}
+
+.title{
+    color: #39b573;
+    font-family: 'Creepster', cursive;
+    font-size: 50px;
+    margin-left: 4em;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
