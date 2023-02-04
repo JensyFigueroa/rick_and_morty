@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from '../card/Card';
 import styled from 'styled-components';
 
 const BoxCards = styled.div`
@@ -6,6 +6,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 align-items: center;
+flex-wrap: wrap;
 `
 
 export default function Cards(props) {
@@ -18,7 +19,8 @@ export default function Cards(props) {
             species={e.species} 
             gender={e.gender}
             image={e.image} 
-            onClose={()=> alert('Emulamos que se cierra la card')} 
+            // onClose={()=> alert('Emulamos que se cierra la card')} 
+            onClose={()=> props.onClose(e.id)}
             key={i++}/>
       )}
    </BoxCards>;

@@ -7,7 +7,6 @@
 .btnSearchBar{
     min-width: 130px;
     height: 40px;
-    color: #fff;
     padding: 5px 10px;
     font-weight: bold;
     cursor: pointer;
@@ -17,15 +16,15 @@
     outline: none;
     border-radius: 5px;
     z-index: 0;
-    background: #fff;
+    background: #33ff5c;
     overflow: hidden;
-    border: 2px solid #33ff5c;
-    color: #33ff5c;
+    border: 2px solid #fff;
+    color: #fff;
     margin: 0.3em 0.5em 1em 0.5em;
 }
 
 .btnSearchBar:hover {
-  color: #fff;
+  color: #33ff5c;
 }
 
 .btnSearchBar:hover:after {
@@ -41,5 +40,5 @@
   top: 0;
   width: 0;
   height: 100%;
-  background: #33ff5c;
+  background: #fff;
 };
