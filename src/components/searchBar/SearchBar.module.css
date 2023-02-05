@@ -16,15 +16,15 @@
     outline: none;
     border-radius: 5px;
     z-index: 0;
-    background: #33ff5c;
+    background: rgb(101, 219, 93);
     overflow: hidden;
-    border: 2px solid #fff;
+    border: 3px solid rgb(147, 0, 192);
     color: #fff;
     margin: 0.3em 0.5em 1em 0.5em;
 }
 
 .btnSearchBar:hover {
-  color: #33ff5c;
+  color: rgb(101, 219, 93);;
 }
 
 .btnSearchBar:hover:after {

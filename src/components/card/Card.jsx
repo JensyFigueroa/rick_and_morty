@@ -58,6 +58,9 @@ const Clases = styled.div`
 const H2 = styled.h2`
    font-weight: normal;
    font-size: 20px;
+   color: rgb(147, 0, 192);
+   font-weight: 600;
+   font-style: italic;
 `
 
 export default function Card(props) {

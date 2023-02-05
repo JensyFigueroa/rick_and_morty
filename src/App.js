@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+
 import './App.css'
+import About from './components/about/About.jsx'
 import Cards from './components/cards/Cards.jsx'
-import Nav from './components/navBar/Nav.jsx'
+import NavBar from './components/navBar/NavBar.jsx'
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -39,8 +42,12 @@ function App() {
 
   return (
     <div className='App' style={{ padding: '0px' }}>
-      <Nav onSearch={onSearch} random={random}/>
-      <Cards characters={characters} onClose={onClose} />
+      <NavBar onSearch={onSearch} random={random}/>
+      <Routes>
+        <Route path='/' element={<Cards  characters={characters} onClose={onClose} />}/>
+        <Route path='/home' element={<Cards  characters={characters} onClose={onClose} />}/>
+        <Route path='/about' element={<About/>}/>
+      </Routes>      
     </div>
   )
 }

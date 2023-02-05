@@ -12,11 +12,21 @@
 }
 
 .title{
-    color: #39b573;
+    color: rgb(101, 219, 93);
     font-family: 'Creepster', cursive;
     font-size: 50px;
     margin-left: 4em;
     margin-top: 10px;
     margin-bottom: 0;
+  }
+
+  .title:hover{
+    color: rgb(147, 0, 192);
+  }
+
+  .link{
+    color: rgb(147, 0, 192);
+    font-size: 30px;
+    margin-right: 30px;
   }
 
