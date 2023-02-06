@@ -13,7 +13,7 @@ export default function About () {
             <h1>About me</h1>
             <div className={styles.about}>
                 <img src={photoPerfil} alt="" />
-                <p>Soy Jensy Figueroa, me encuentro realizado el BootCamp de Full Stack Development en Henry  y esta App es del 2do. Módulo de Front-End.</p>
+                <p>Mi nombre es Jensy Figueroa, me encuentro realizado el BootCamp de Full Stack Development en Henry  y esta App es del 2do. Módulo de Front-End.</p>
             </div>
 
             <h1>About App</h1>  

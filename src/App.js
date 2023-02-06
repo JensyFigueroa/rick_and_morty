@@ -44,9 +44,9 @@ function App() {
     <div className='App' style={{ padding: '0px' }}>
       <NavBar onSearch={onSearch} random={random}/>
       <Routes>
-        <Route path='/' element={<Cards  characters={characters} onClose={onClose} />}/>
-        <Route path='/home' element={<Cards  characters={characters} onClose={onClose} />}/>
-        <Route path='/about' element={<About/>}/>
+        <Route exact path='/' element={<Cards  characters={characters} onClose={onClose} />}/>
+        <Route exact path='/home' element={<Cards  characters={characters} onClose={onClose} />}/>
+        <Route exact path='/about' element={<About/>}/>
       </Routes>      
     </div>
   )

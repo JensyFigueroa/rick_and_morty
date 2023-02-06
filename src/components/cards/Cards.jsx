@@ -11,6 +11,7 @@ flex-wrap: wrap;
 
 export default function Cards(props) {
    const { characters } = props;
+   console.log(characters)
    let i = 0
    return <BoxCards>
       {characters.map((e) =>
