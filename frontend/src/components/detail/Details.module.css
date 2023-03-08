@@ -1,0 +1,56 @@
+.details {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.details div h1 {
+    margin-top: 90px;
+    margin-left: 80px;
+    color: rgb(101, 219, 93);
+}
+
+.details h3 {
+    margin-left: 70px;
+}
+
+.field {
+    margin-top: 0px;
+    display: flex;
+    color: rgb(147, 0, 192);
+}
+
+.data {
+    color: rgb(101, 219, 93);
+}
+
+.image {
+    margin-top: 90px;
+    margin-bottom: auto;
+    margin-left: 120px;
+    border-radius: 30px;
+    border: 6px solid rgb(147, 0, 192);
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    margin-top: 70px;
+    border-radius: 10px;
+    background-color: rgb(147, 0, 192);
+    color: white;
+    font-style: italic;
+    font-size: 25px;
+}
+
+.btn:hover {
+    color: #33ff5c;
+    ;
+    background-color: rgb(147, 0, 192);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #33ff5c;
+}

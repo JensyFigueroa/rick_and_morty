@@ -1,0 +1,18 @@
+.favorites {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.favorites p {
+    margin-top: 160px;
+    color: #33ff5c;
+    font-size: 35px;
+}
+
+.favorites h1 {
+    margin-top: 60px;
+    color: rgb(147, 0, 192);;
+}

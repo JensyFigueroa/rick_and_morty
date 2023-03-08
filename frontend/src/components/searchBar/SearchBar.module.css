@@ -1,0 +1,50 @@
+.searchInput{
+    height:35px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.searchInput::placeholder{
+  
+  color:  rgb(147, 0, 192, .3);
+  
+}
+
+.btnSearchBar{
+    min-width: 90px;
+    height: 40px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: rgb(101, 219, 93);
+    overflow: hidden;
+    border: 3px solid rgb(147, 0, 192);
+    color: #fff;
+    margin: 0.3em 0em 1em 0.5em;
+}
+
+.btnSearchBar:hover {
+  color: rgb(101, 219, 93);
+}
+
+.btnSearchBar:hover:after {
+  width: 100%;
+}
+
+.btnSearchBar:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #fff;
+};

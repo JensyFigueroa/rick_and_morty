@@ -1,0 +1,29 @@
+var fs = require('fs');
+var http = require('http')
+// var characters = require('./utils/data.js')
+var {getCharById} = require('./controllers/getCharById.js')
+var {getCharDetails} = require('./controllers/getCharDetails.js')
+
+http.createServer((req, res)=>{
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    //ESTO ES DE OTRA HOMEWORK
+    // if (req.url.includes('rickandmorty/')) {
+    //     let idCharacter = req.url.split('/').pop()
+    //     let character = characters.find((e)=> e.id === Number(idCharacter) )
+    //     res.writeHead(200, {'Content-Type':'application/json'});
+    //     res.end(JSON.stringify(character))
+    // }
+
+    if (req.url.includes('onSearch/')) {
+        let idCharacter = req.url.split('/').pop()
+        getCharById(res, idCharacter);
+        
+    }
+
+    if (req.url.includes('detail/')) {
+        let idCharacter = req.url.split('/').pop()
+        getCharDetails(res, idCharacter);
+        
+    }
+
+}).listen(3001,'localhost')

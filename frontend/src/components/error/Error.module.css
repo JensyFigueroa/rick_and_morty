@@ -1,0 +1,15 @@
+.h1Error{
+    margin-top: 90px;
+    color: rgb(147, 0, 192);
+    font-style: italic;
+    font-size: 100px ;
+}
+
+.error{
+    font-style: italic;
+    color: rgb(101, 219, 93);
+}
+
+.imgError{
+    width: 40%;
+}
