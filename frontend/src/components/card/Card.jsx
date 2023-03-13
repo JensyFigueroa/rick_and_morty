@@ -97,7 +97,7 @@ export function Card(props) {
 
    useEffect(() => {
       myFavorites.forEach((character) => {
-         console.log(isFav)
+         // console.log(isFav)
          if (character.id === props.id) {
             setIsFav(true);
          }

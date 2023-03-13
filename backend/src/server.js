@@ -1,4 +1,28 @@
-var fs = require('fs');
+// Servidor con express
+const express = require('express');
+const server = express();
+const PORT = 3001;
+const router = require('./routes/index.js')
+const cors = require('cors')
+
+const corsOption = {
+    origin: '*',
+    credentials: true, //Access-Control-Allow-Origin: true
+    optionSuccessStatus: 200
+};
+server.use(cors(corsOption))
+
+server.use(express.json());
+server.use('/', router);
+
+
+
+server.listen(PORT,()=>console.log('listening Port: '+ PORT))
+
+
+// Servidor con NODE puro.
+
+/* var fs = require('fs');
 var http = require('http')
 // var characters = require('./utils/data.js')
 var {getCharById} = require('./controllers/getCharById.js')
@@ -15,9 +39,9 @@ http.createServer((req, res)=>{
     // }
 
     if (req.url.includes('onSearch/')) {
+        console.log(req.url.includes('onSearch/'));
         let idCharacter = req.url.split('/').pop()
-        getCharById(res, idCharacter);
-        
+        getCharById(res, idCharacter);  
     }
 
     if (req.url.includes('detail/')) {
@@ -26,4 +50,4 @@ http.createServer((req, res)=>{
         
     }
 
-}).listen(3001,'localhost')
+}).listen(3001,'localhost') */

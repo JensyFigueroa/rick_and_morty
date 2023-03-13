@@ -10,8 +10,7 @@ import Details from './components/detail/Details.jsx'
 import Error from './components/error/Error.jsx'
 import Form from './components/form/Form.jsx'
 import Favorites from './components/favorites/Favorites.jsx'
-
-
+import {removeFav} from './redux/actions'
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -37,9 +36,6 @@ function App() {
         alert('Debe introducir un ID valido...')
       }
     }
-  
-
-
   
   const dispatch = useDispatch()
 
