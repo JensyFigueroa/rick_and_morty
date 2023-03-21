@@ -1,23 +1,25 @@
 // Servidor con express
 const express = require('express');
-const server = express();
+//const server = express();
+const app = require('./app')
 const PORT = 3001;
-const router = require('./routes/index.js')
-const cors = require('cors')
+// const router = require('./routes/index.js')
+// const cors = require('cors')
 
-const corsOption = {
-    origin: '*',
-    credentials: true, //Access-Control-Allow-Origin: true
-    optionSuccessStatus: 200
-};
-server.use(cors(corsOption))
+// const corsOption = {
+//     origin: '*',
+//     credentials: true, //Access-Control-Allow-Origin: true
+//     optionSuccessStatus: 200
+// };
+// server.use(cors(corsOption))
 
-server.use(express.json());
-server.use('/', router);
+// server.use(express.json());
+// server.use('/', router);
 
+// server.listen(PORT,()=>console.log('listening Port: '+ PORT))
 
+app.listen(PORT,()=>console.log('listening Port: '+ PORT))
 
-server.listen(PORT,()=>console.log('listening Port: '+ PORT))
 
 
 // Servidor con NODE puro.

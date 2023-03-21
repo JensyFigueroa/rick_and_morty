@@ -1,10 +1,13 @@
 var favs = require('../utils/favs.js');
 
 const addFav = (req, res) =>{
-    let char = req.body;
+    let char = req.body   ;
+
+    // console.log(char)
+    
     if (char && favs.push(char)) res.status(200).json(char)
      else res.status(500).json({error: 'Error add Fav'})
-    
+  
 }
 
 const getFavs = (req, res) =>{

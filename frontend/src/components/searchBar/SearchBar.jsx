@@ -15,13 +15,17 @@ export default function SearchBar(props) {
 
    return (
       <div>
-         <input className={styles.searchInput} type='search' placeholder='Introduzce un N° de ID'  onChange={handleSearchChange}/>
+
+      <div className={styles.searchBox}>
+         <button className={styles.btnSearch}><i class="fa-solid fa-magnifying-glass"></i></button>
+         <input type="text" className={styles.inputSearch} placeholder="N° de ID..." onChange={handleSearchChange}/>
          <button className={styles.btnSearchBar} //onClick={props.onSearch}
             onClick={() => props.onSearch(character)} 
          >Agregar</button>
-          <button className={styles.btnSearchBar}
+         <button className={styles.btnSearchBar}
             onClick={props.random} 
          >Random</button>
+      </div>
       </div>
    );
 }
