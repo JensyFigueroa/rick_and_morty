@@ -14,22 +14,23 @@ import {removeFav} from './redux/actions'
 
 function App() {
   const [characters, setCharacters] = useState([]);
-
   function onSearch(character) {
-    
+    if(character > 826) window.alert('Introduzca ID menores a 827')
     if (character) {
         // fetch(`https://rickandmortyapi.com/api/character/${character}`)
         //fetch(`http://localhost:3001/rickandmorty/${character}`)
         fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
           .then((response) => response.json())
           .then((data) => {
-            if (data.name) {
+            if (data.id) {
               let finded = characters.find(element => element.id === data.id)
+              // console.log(finded)
               if (finded === undefined) {
                 setCharacters((oldChars) => [...oldChars, data])
               }else{
-                window.alert('No hay personajes con ese ID');
+                window.alert('Ya existe personaje con es ID');
               }
+
             }
           })
         }else{
@@ -59,7 +60,7 @@ function App() {
     const [access, setAccess] = useState(false);
     // const username = 'ejemplo@gmail.com';
     // const password = '1password';
-    const username = 'j@gmail.com';
+    const username = 'jensyFigueroa@henry.com';
     const password = '111111';
 
     function login(userData) {
@@ -86,7 +87,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Form login={login}/>}/>
         <Route exact path='/home' element={<Cards  characters={characters} onClose={onClose} />}/>
-        <Route exact path='/favorites' element={<Favorites characters={characters}/>}/>
+        <Route exact path='/favorites' element={<Favorites characters={characters} />}/>
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/detail/:detailId'  element={<Details/>}/>
         <Route path='*' element={<Error/>}/>

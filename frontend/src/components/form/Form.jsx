@@ -30,11 +30,11 @@ export default function Form(props) {
         <form className={styles.loginForm} onSubmit={handleSubmit}>
             <div className={styles.textBox}>
                 <input type="email" placeholder='Username' name='username' onChange={handleInputChange} value={userData.username} />
-                {<p className={styles.errors}>{errors.username}</p>}
+                {errors && <p className={styles.errors}>{errors.username}</p>}
             </div>
             <div className={styles.textBox}>
                 <input type="password" placeholder='Password' name='password' onChange={handleInputChange} value={userData.password} />
-                {<p className={styles.errors}>{errors.password}</p>}
+                {errors && <p className={styles.errors}>{errors.password}</p>}
             </div>
 
             <button type='submit'>LOGIN</button>

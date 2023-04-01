@@ -13,7 +13,7 @@ html, body {height: 100%;}
 }
 
 .login{
-    width: 30%;
+    width: 50%;
     height: 50%;
     padding: 70px 30px 44px;
     border-radius: 22px;
@@ -35,7 +35,7 @@ html, body {height: 100%;}
     color: white;
     margin: 0 0 30px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Creepster', cursive;
 }
 
@@ -78,13 +78,21 @@ html, body {height: 100%;}
 .loginForm input{
     background: transparent;
     border: 3px solid rgba(196, 7, 243);;
-    font-size: 18px;
+    font-size: 20px;
     padding: 0 20px 0 50px;
     color: white;
+    font-weight: 500;
 }
 
 .loginForm input:focus{
-    border-color: #33ff5c;;;
+    border-color: #33ff5c;
+}
+.loginForm input::placeholder{
+    color: rgb(101, 219, 93);
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    /* background-color: rgb(0, 0, 0, .5); */
 }
 
 .loginForm input:focus ~ span{

@@ -1,6 +1,7 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, RESET, GET_FAVS } from '../actions';
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, RESET, GET_FAVS, LOGIN } from '../actions';
 
 const inicialState = {
+    idUser: 0,
     myFavorites:[],
     allCharacters:[]
 }
@@ -8,7 +9,6 @@ const inicialState = {
 export default function rootReducer (state = inicialState, action){
     switch (action.type) {
         case ADD_FAV: 
-        console.log(action.payload)
             const addFav = [...state.allCharacters, action.payload];
             return{
             ...state, 
@@ -26,32 +26,48 @@ export default function rootReducer (state = inicialState, action){
         }
 
         case FILTER: 
+            let filterFav;
+            if (action.payload === 'Select Option') {
+                filterFav = state.allCharacters
+            }else{
+                filterFav = state.allCharacters.filter(e =>  e.gender.toLowerCase() === action.payload.toLowerCase())
+            }
             return {
             ...state,
-            myFavorites: state.allCharacters.filter(e => e.gender === action.payload)
+            myFavorites: filterFav
         }
 
         case ORDER: 
             let orderFav;
             if (action.payload === 'Ascendente') {
                 orderFav = state.myFavorites.sort((a,b) => a.id < b.id ? 1 : -1)
-            } else {
+            } 
+            if (action.payload === 'Descendente'){
                 orderFav = state.myFavorites.sort((a,b) => a.id > b.id ? 1 : -1)
             }
+            if (action.payload === 'Select Option') {
+                orderFav = state.allCharacters
+            }
+
         return{
             ...state,
             myFavorites: [...orderFav]
         }
 
-        case RESET: return{
-            ...state,
-            myFavorites: state.allCharacters
-        }
+        // case RESET: return{
+        //     ...state,
+        //     myFavorites: state.allCharacters
+        // }
 
         case GET_FAVS: return {
             ...state,
             myFavorites:[...action.payload],
             allCharacters:[...action.payload    ]
+        }
+
+        case LOGIN: return{
+            ...state,
+            idUser: action.payload
         }
     
         default: return state 

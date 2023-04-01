@@ -43,8 +43,10 @@ code {
   background-color: rgb(147, 0, 192);;
   color: white;
   font-style: italic;
-  font-size: 25px;
+  font-size: 28px;
   text-decoration:none ;
+
+  
 }
 
 .link:hover{
@@ -59,8 +61,8 @@ code {
 
 /************ Login ************/
 .avatar > img{
-  width: 50%;
-  height: 50%;
+  width: 65%;
+  height: 65%;
   object-fit: cover;
   border-radius: 100px;
   border: 6px solid rgb(147, 0, 192);

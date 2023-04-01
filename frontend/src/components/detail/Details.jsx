@@ -6,7 +6,7 @@ export default function Details() {
     const [character, setCharacter] = useState({
         name: '',
         status: '',
-        specie: '',
+        species: '',
         gender: '',
         origin: '',
         image: ''
@@ -20,14 +20,15 @@ export default function Details() {
         fetch(`http://localhost:3001/rickandmorty/detail/${detailId}`)
             .then((response) => response.json())
             .then((char) => {
+                // console.log(char)
                 if (char.name) {
                     // setCharacter(char);
                     setCharacter({
                         name: char.name,
                         status: char.status,
-                        specie: char.specie,
+                        species: char.species,
                         gender: char.gender,
-                        origin: char.origin.name,
+                        origin: char.origin,
                         image: char.image
                     });
                 } else {
@@ -47,7 +48,7 @@ export default function Details() {
                 <div>
                     <h1>{character.name}</h1>
                     <h3 className={styles.field}>Status: &nbsp;<span className={styles.data}>{character.status}</span></h3>
-                    <h3 className={styles.field}>Specie: &nbsp;<span className={styles.data}>{character.Spacies}</span></h3>
+                    <h3 className={styles.field}>Specie: &nbsp;<span className={styles.data}>{character.species}</span></h3>
                     <h3 className={styles.field}>Gender: &nbsp;<span className={styles.data}>{character.gender}</span></h3>
                     <h3 className={styles.field}>Origin: &nbsp;<span className={styles.data}>{character.origin}</span></h3>
                 </div>

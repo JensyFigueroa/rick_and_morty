@@ -7,25 +7,26 @@ export default function SearchBar(props) {
 
    const handleSearchChange = (e) => {
       let { value } = e.target;
-      
-      if (value){
+
+      if (value) {
          setCharacter(value);
       }
+      
    };
 
    return (
-      <div>
-
       <div className={styles.searchBox}>
-         <button className={styles.btnSearch}><i class="fa-solid fa-magnifying-glass"></i></button>
-         <input type="text" className={styles.inputSearch} placeholder="N° de ID..." onChange={handleSearchChange}/>
-         <button className={styles.btnSearchBar} //onClick={props.onSearch}
+         <button className={styles.btnSearch} onClick={() => props.onSearch(character)}><i className="fa-solid fa-magnifying-glass"></i></button>
+         <input type="text" className={styles.inputSearch} placeholder="Introduce Chararter ID..." onChange={handleSearchChange}/>
+         {/* <button className={styles.btnSearchBar} //onClick={props.onSearch}
             onClick={() => props.onSearch(character)} 
-         >Agregar</button>
+         >Agregar</button> */}
          <button className={styles.btnSearchBar}
-            onClick={props.random} 
+            onClick={props.random}
          >Random</button>
-      </div>
       </div>
    );
 }
+
+
+

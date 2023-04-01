@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -104,18 +105,22 @@ export function Card(props) {
       });
    }, [myFavorites]);
 
+   const location = useLocation()
 
    return (
       <DivCard>
-         <Buttons>
+         {location.pathname !== '/favorites' ? <Buttons>
             {isFav ? (
                <button style={{backgroundColor: 'transparent', border:'0px'}} onClick={() => handleFavorite(props)}>❤️</button>
             ) : (
                <button style={{backgroundColor: 'transparent', border:'0px'}}  onClick={() => handleFavorite(props)}>🤍</button>
             )
             }
+            
             <Button onClick={props.onClose}>X</Button>
-         </Buttons>
+         </Buttons> : <button></button>} 
+
+
 
          <Link to={`/detail/${props.id}`} style={{textDecoration:'none'}}>
             <Name>{props.name}</Name>

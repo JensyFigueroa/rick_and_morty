@@ -1,68 +1,63 @@
-.navBar{
-    display: flex;
+.navBarGrid {
+  /* display: flex;
     justify-content:space-between; 
-    border-radius: 5px;
-
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    width: 100%; 
-    z-index: 1;
+     */
+  display: grid;
+  grid-template-columns: 400px 800px 550px 150px;  
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
+.gridItemMenu{
+  margin-top: 15px;
+}
 .linkTitle {
   text-decoration: none;
 }
 
-.title{
-    color: rgb(101, 219, 93);
-    font-family: 'Creepster', cursive;
-    font-size: 50px;
-    margin-left: 2em;
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
+.title {
+  color: rgb(101, 219, 93);
+  font-family: 'Creepster', cursive;
+  font-size: 50px;
+  margin-left: 2em;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 
-  .title:hover{
-    /* color: rgb(147, 0, 192); */
-    box-shadow: 7px 7px 7px rgb(147, 0, 192);
-  }
+.title:hover {
+  /* color: rgb(147, 0, 192); */
+  box-shadow: 7px 7px 7px rgb(147, 0, 192);
+}
 
-  .menu{
-    width: 20%;
-    height: 35px;
-    margin-top: 18px;
-    margin-right: 170px;
-  }
+.btnLogOut {
+  width: 120px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 10px;
+  margin-right: -70px;
+  margin-left: -50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(147, 0, 192);
+  color: white;
+  font-style: italic;
+  font-size: 20px;
+  text-decoration: none;
+}
 
+.btnLogOut:hover {
+  color: #33ff5c;
+  ;
+  background-color: rgb(147, 0, 192);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #33ff5c;
+}
 
-  .btnLogOut{
-    width: 120px;
-    height: 40px;
-    margin-top: 20px;
-    border-radius: 10px;
-    margin-right: 10px;
-    margin-left: -50px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(147, 0, 192);;
-    color: white;
-    font-style: italic;
-    font-size: 20px;
-    text-decoration:none ;
-  }
-  
-  .btnLogOut:hover{
-    color: #33ff5c;;
-    background-color: rgb(147, 0, 192);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #33ff5c;
-  }
-
-  i {
-    margin-left: 4px;
-  }
-
-  
-
+i {
+  margin-left: 4px;
+}

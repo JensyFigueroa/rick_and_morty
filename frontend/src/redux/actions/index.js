@@ -1,10 +1,10 @@
-import axios from  'axios'
 export const ADD_FAV = 'ADD_FAV';
 export const REMOVE_FAV = 'REMOVE_FAV';
 export const FILTER = 'FILTER';
 export const ORDER = 'ORDER';
 export const RESET = 'RESET';
 export const GET_FAVS = 'GET_FAVS';
+export const LOGIN = 'LOGIN';
 
 /* ****** Se comenta porque se agrega cosas que vienen del BACKEN ******** */
 // export const addFav = (character) =>{
@@ -22,11 +22,11 @@ export const GET_FAVS = 'GET_FAVS';
 // }
 
 /* Se agrega nueva funcionalidad que viene del BACKEND */
-export const addFav = (character) =>{
+export const addFav = (character, idUser) =>{
     return async function (dispatch){
         try {
             //const data = 
-            const data = await fetch('http://localhost:3001/rickandmorty/favorites', {
+            const data = await fetch(`http://localhost:3001/rickandmorty/favorites?idUser=${idUser}`, {
                 method: 'POST', 
                 body: JSON.stringify(character),
                 headers: {"Content-type":"application/json, charset=utf-8"}
@@ -51,10 +51,10 @@ export const addFav = (character) =>{
     }
 }
 
-export const removeFav = (id) => {
+export const removeFav = (id, idUser) => {
     return async function (dispatch){
         try {
-            const data = await fetch(`http://localhost:3001/rickandmorty/favorites/${id}`,{
+            const data = await fetch(`http://localhost:3001/rickandmorty/favorites/${id}?idUser=${idUser}`,{
             method: 'DELETE',
         })
         .then((response) => response.json())
@@ -101,14 +101,27 @@ export const reset = () =>{
     }
 }
 
-export const getFavorites = () =>{
+export const getFavorites = (idUser) =>{
     return async function (dispatch) {
         try {
-            const data = await fetch('http://localhost:3001/favorites/favorites')
+            const data = await fetch(`http://localhost:3001/favorites/favorites?idUser=${idUser}`)
             .then((response) => response.json())
             if(data) dispatch({type: GET_FAVS, payload:data})
         } catch (error) {
             console.log(error);
         }
     }
+}
+
+export function login(email, password){
+    return async function (dispatch){
+        try {
+            const obj = await fetch(`http://localhost:3001/login?email=${email}&password=${password}`)
+            .then((response) => response.json());
+
+            if(obj.access) dispatch({type:'LOGIN', payload:obj.id})
+        } catch (error) {
+            console.log(error)
+        }
+    } 
 }
