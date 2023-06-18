@@ -21,7 +21,7 @@ const PORT = 3001;
 /* Sequalezer sincronizacion de las rutas */
 const {conn} = require('./DB_conection.js')
 
-conn.sync({force: true}).then(()=>{
+conn.sync({force: false}).then(()=>{
     app.listen(PORT,()=>console.log('listening Port: '+ PORT))
 })
 
