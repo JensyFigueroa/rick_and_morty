@@ -4,7 +4,10 @@ export const FILTER = 'FILTER';
 export const ORDER = 'ORDER';
 export const RESET = 'RESET';
 export const GET_FAVS = 'GET_FAVS';
-export const LOGIN = 'LOGIN';
+export const LOG_IN = 'LOG_IN';
+export const LOG_OUT = 'LOG_OUT';
+export const POST_USER = 'POST_USER';
+
 
 /* ****** Se comenta porque se agrega cosas que vienen del BACKEN ******** */
 // export const addFav = (character) =>{
@@ -29,7 +32,7 @@ export const addFav = (character, idUser) =>{
             const data = await fetch(`http://localhost:3001/rickandmorty/favorites?idUser=${idUser}`, {
                 method: 'POST', 
                 body: JSON.stringify(character),
-                headers: {"Content-type":"application/json, charset=utf-8"}
+                headers: {"Content-type":"application/json", charset:"utf-8"}
             })
             .then((response) => response.json())
             // .then((data) => 
@@ -113,15 +116,49 @@ export const getFavorites = (idUser) =>{
     }
 }
 
-export function login(email, password){
+export function logIn(data){
+
     return async function (dispatch){
         try {
-            const obj = await fetch(`http://localhost:3001/login?email=${email}&password=${password}`)
+            const obj = await fetch(`http://localhost:3001/rickandmorty/login?email=${data.email}&password=${data.password}`)
             .then((response) => response.json());
 
-            if(obj.access) dispatch({type:'LOGIN', payload:obj.id})
+            if(obj.access) dispatch({type: LOG_IN, payload:obj})
         } catch (error) {
             console.log(error)
         }
     } 
 }
+
+export function logOut(bool){
+    // console.log(bool)
+    return {
+        type: LOG_OUT,
+         payload:bool
+    }
+
+}
+
+export function postUser(logUp){
+    return async function (dispatch){
+        try {
+            //const data = 
+            const data = await fetch(`http://localhost:3001/rickandmorty/login`, {
+                method: 'POST', 
+                body: JSON.stringify(logUp),
+               headers: {"Content-type":"application/json", charset:"utf-8"}
+            })
+            .then((response) => response.json())
+            // .then((data) =>
+            
+            console.log(data)
+            // if(data)
+            //  dispatch({type: POST_USER, payload: userData})
+            //  )
+             
+        } catch (error) {
+            console.log(error);
+        }
+    } 
+}
+

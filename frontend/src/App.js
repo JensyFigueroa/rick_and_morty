@@ -11,6 +11,7 @@ import Error from './components/error/Error.jsx'
 import Form from './components/form/Form.jsx'
 import Favorites from './components/favorites/Favorites.jsx'
 import {removeFav} from './redux/actions'
+import CreateUser from './components/form/CreateUser'
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -55,16 +56,16 @@ function App() {
 
 
     // Simulando una base de datos de donde traermos los datos del login
-
+/* 
     const navigate = useNavigate();
     const [access, setAccess] = useState(false);
     // const username = 'ejemplo@gmail.com';
     // const password = '1password';
-    const username = 'jensyFigueroa@henry.com';
+    const email = 'jensy@henry.com';
     const password = '111111';
 
     function login(userData) {
-        if (userData.password === password && userData.username === username) {
+        if (userData.password === password && userData.email === email) {
             setAccess(true);
             navigate('/home');
         }
@@ -77,19 +78,20 @@ function App() {
 
    const logOut = () =>{
     setAccess(false)
-   }
+   } */
 
   return (
     <div className='App' style={{ padding: '0px' }}>
 
-      {location.pathname !== '/' && <NavBar onSearch={onSearch} random={random} logOut={logOut}/>}
+      {location.pathname !== '/' && <NavBar onSearch={onSearch} random={random} /* logOut={logOut} *//>}
       
       <Routes>
-        <Route exact path='/' element={<Form login={login}/>}/>
+        <Route exact path='/' element={<Form /* login={login} *//>}/>
         <Route exact path='/home' element={<Cards  characters={characters} onClose={onClose} />}/>
         <Route exact path='/favorites' element={<Favorites characters={characters} />}/>
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/detail/:detailId'  element={<Details/>}/>
+        <Route exact path='/createUser/'  element={<CreateUser/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>      
     </div>

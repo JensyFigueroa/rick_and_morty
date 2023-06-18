@@ -21,7 +21,7 @@ export default function SearchBar(props) {
          {/* <button className={styles.btnSearchBar} //onClick={props.onSearch}
             onClick={() => props.onSearch(character)} 
          >Agregar</button> */}
-         <button className={styles.btnSearchBar}
+         <button className={styles.btnRandom}
             onClick={props.random}
          >Random</button>
       </div>

@@ -1,5 +1,9 @@
 .searchBox{
-  margin-top: 10px ;
+  width: 80%;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* width: fit-content;
   height: fit-content; */
   position: relative;
@@ -16,7 +20,8 @@
   cursor: pointer;
   border-radius: 50%;
   position: absolute;
-  right: 200px;
+  right: 125px;
+  top: 10px;
   color: rgb(101, 219, 93); ;
   background-color:transparent;
   pointer-events: painted;  
@@ -44,7 +49,7 @@
 }
 
 .inputSearch{
-  height: 50px;
+  height: 35px;
   width: 300px;
   border-style: none;
   padding: 10px;
@@ -67,7 +72,7 @@
   border-radius: 25px;
 }
 
-.btnSearchBar{
+.btnRandom{
     min-width: 90px;
     height: 35px;
     padding: 5px 10px;
@@ -75,6 +80,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    top: 10px;
     display: inline-block;
     outline: none;
     border-radius: 5px;
@@ -86,16 +92,16 @@
     margin: 0.3em 0em 1em 0.5em;
 }
 
-.btnSearchBar:hover {
+.btnRandom:hover {
   color: rgb(101, 219, 93);
   border: 3px solid rgb(101, 219, 93);
 }
 
-.btnSearchBar:hover:after {
+.btnRandom:hover:after {
   width: 100%;
 }
 
-.btnSearchBar:after {
+.btnRandom:after {
   content: "";
   position: absolute;
   z-index: -1;

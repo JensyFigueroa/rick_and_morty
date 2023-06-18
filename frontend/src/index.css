@@ -9,6 +9,11 @@ body {
   background-attachment: fixed;
 }
 
+:root{
+  --font1: 'Caveat', cursive;
+  --font2: 'Kablammo', cursive;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -20,8 +25,6 @@ code {
 }
 
 /************ NavBar ************/
-
-
 .active{
   margin-right: 30px;
   margin-left: 30px;
