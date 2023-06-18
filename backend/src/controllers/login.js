@@ -4,6 +4,7 @@ const login = async (req, res) => {
 
     /* Cada vez que nos envia login se recomienda hacerlo por Body nunca por Query */
     const { email, password } = req.query;
+    // console.log(req.query)
 
     try {
         if (!email || !password) res.status(400).json({ message: 'Faltan datos' });

@@ -1,12 +1,14 @@
 const {User} = require('../DB_conection.js')
 
 const postUser = async (req, res) =>{
-    const {email, password} = req.body;
+    const {nameUser, email, password} = req.body;
+
+    console.log(req.body)
 
     try {
-        if(!email || !password) res.status(400).json({message: 'Faltan datos'});
+        if(!nameUser || !email || !password) res.status(400).json({message: 'Fill in the fields'});
 
-        const [user, created] = await User.findOrCreate({where:{email, password}});
+        const [user, created] = await User.findOrCreate({where:{nameUser, email, password}});
         res.status(200).json(user)
 
     } catch (error) {
