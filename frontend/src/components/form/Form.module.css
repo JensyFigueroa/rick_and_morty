@@ -123,9 +123,9 @@
 	background-color: rgba(0, 255, 119, 0.3);
 	background: url("../../img/rick-morty_cs71.jpg");
 	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-position:initial ;
+	background-repeat: repeat;
+	background-size: 50%;
 	height: 100%;
 	left: -100%;
 	position: relative;

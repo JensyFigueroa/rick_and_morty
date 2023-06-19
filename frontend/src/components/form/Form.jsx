@@ -44,7 +44,7 @@ export default function Form(props) {
         e.preventDefault();
         // props.login(userData)
 
-        if (login.name & login.password) {
+        if (login.email && login.password) {
             dispacth(logIn(login))
             setLogin({ email: '', password: '' })
         }
